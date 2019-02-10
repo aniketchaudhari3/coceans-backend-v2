@@ -239,9 +239,10 @@ def scrape_indeed(j_query, j_location, j_page):
 
     for i in jobCards:
         # populating the job and json arrays
-        job_arr.append(IndeedScraper(i).get_job())
-        indeed_job_count = IndeedScraper(i).get_jobcount()
-        json_arr.append(IndeedScraper(i).get_job().get_json())
+        job_obj = IndeedScraper(i)
+        job_arr.append(job_obj.get_job())
+        indeed_job_count = job_obj.get_jobcount()
+        json_arr.append(job_obj.get_job().get_json())
 
     #def ret_json_arr():
     return indeed_job_count,json_arr

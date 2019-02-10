@@ -30,17 +30,12 @@ def set_last_url(lurl):
 
 def set_payload(query,location,page):
     global payload
-    if page != '1':
-        payload = {
+    print(type(page))
+	payload = {
             "k":query,
             "l":location,
-            "p":str(page+1)+'0'
-        }
-    else:
-        payload = {
-            "k":query,
-            "l":location
-        }
+            "p":'1'
+	}
 
 '''
 end global vars
